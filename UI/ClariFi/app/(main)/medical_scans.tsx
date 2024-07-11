@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Image, StatusBar, Animated } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Image, StatusBar, Animated , TextInput} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useLayoutEffect } from 'react';
 import { FontAwesome } from '@expo/vector-icons'; // Make sure to install the appropriate package
 
 export default function Component() {
   const navigation = useNavigation();
+
+  const [search, setSearch] = useState(false);
+
   const [FBC_flask, setFBC_flask] = useState(false);
   const [MRI_flask, setMRI_flask] = useState(false);
   const [CT_flask, setCT_flask] = useState(false);
@@ -37,6 +40,8 @@ export default function Component() {
 
   return (
     <> 
+    {/* StatusBar off */}
+      <StatusBar hidden />
       <View className="flex p h-60 bg-theme-green rounded-b-[20] shadow-md shadow-black shadow-slate-400">
         <Animated.Image
           style={{ width: 200, height: 300, top: 0, transform: [{ translateX: spin}], opacity: 0.3}}
@@ -47,9 +52,24 @@ export default function Component() {
           source={require('../../assets/images/doctor2.png')}
           resizeMode="cover"
         />
+        <TouchableOpacity 
+        className='absolute left-8 top-8'
+        onPress={() => setSearch(!search)}
+        >
+        <FontAwesome name="search" size={24} color="#ffffff"/>
+      </TouchableOpacity>
         <Text className=' absolute pl-4 pb-8 bottom-0 left-0 text-3xl font-bold text-white'>Medical Scans</Text>
         <Text className=' absolute pl-4 pb-4 bottom-0 left-0 text-sms font-regular text-white opacity-50'>Choose a medical scan type to continue</Text>
       </View>
+
+      {search && (
+      <View className='bg-white p-4 shadow-md mx-4 rounded-full mt-4'>
+        <View className="flex-row items-center mx-2">
+          <FontAwesome name="search" size={24} color="#0f525a"/>
+          <TextInput className='mx-2 pl-2 text-lg opacity-30' placeholder='Search for a medical scan' placeholderTextColor={"black"}/>  
+        </View>
+      </View>
+    )}
 
       <View className="pt-5 px-2 flex-col flex-1">
         <ScrollView className="mb-6">
@@ -79,6 +99,28 @@ export default function Component() {
                   <FontAwesome name="camera" size={24} color="#0f525a" style={{ position: 'absolute', right: 10, top: 6}} />
                 </TouchableOpacity>
               </View>
+              {/* more */}
+              <View className="bg-white rounded-lg p-4 mt-1 shadow-md">
+                <View className="absolute w-1 h-16 right-0 bg-theme-green items-center"></View>
+                <TouchableOpacity>
+                  <Text className="text-lg font-bold mb-2">Leg X-ray</Text>
+                  <FontAwesome name="camera" size={24} color="#0f525a" style={{ position: 'absolute', right: 10, top: 6}} />
+                </TouchableOpacity>
+              </View>
+              <View className="bg-white rounded-lg p-4 mt-1 shadow-md">
+                <View className="absolute w-1 h-16 right-0 bg-theme-green items-center"></View>
+                <TouchableOpacity>
+                  <Text className="text-lg font-bold mb-2">Arm X-ray</Text>
+                  <FontAwesome name="camera" size={24} color="#0f525a" style={{ position: 'absolute', right: 10, top: 6}} />
+                </TouchableOpacity>
+              </View>
+              <View className="bg-white rounded-lg p-4 mt-1 shadow-md">
+                <View className="absolute w-1 h-16 right-0 bg-theme-green items-center"></View>
+                <TouchableOpacity>
+                  <Text className="text-lg font-bold mb-2">Hand X-ray</Text>
+                  <FontAwesome name="camera" size={24} color="#0f525a" style={{ position: 'absolute', right: 10, top: 6}} />
+                </TouchableOpacity>
+              </View>
             </View>
           )}
           {/* MRI section */}
@@ -105,6 +147,21 @@ export default function Component() {
                   <FontAwesome name="camera" size={24} color="#0f525a" style={{ position: 'absolute', right: 10, top: 6}} />
                 </TouchableOpacity>
               </View>
+              {/* more */}
+              <View className="bg-white rounded-lg p-4 mt-1 shadow-md">
+                <View className="absolute w-1 h-16 right-0 bg-theme-green items-center"></View>
+                <TouchableOpacity>
+                  <Text className="text-lg font-bold mb-2">Chest MRI</Text>
+                  <FontAwesome name="camera" size={24} color="#0f525a" style={{ position: 'absolute', right: 10, top: 6}} />
+                </TouchableOpacity>
+                </View>
+              <View className="bg-white rounded-lg p-4 mt-1 shadow-md">
+                <View className="absolute w-1 h-16 right-0 bg-theme-green items-center"></View>
+                <TouchableOpacity>
+                  <Text className="text-lg font-bold mb-2">Abdominal MRI</Text>
+                  <FontAwesome name="camera" size={24} color="#0f525a" style={{ position: 'absolute', right: 10, top: 6}} />
+                </TouchableOpacity>
+                </View>
             </View>
           )}
           {/* CT section */}

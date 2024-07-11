@@ -19,7 +19,7 @@ export default function Component() {
       </View>
       <ScrollView className='flex-1 flex-col px-4 py-2 mr-2'>
         <View className='flex-row my-4'>
-          <Image source={require('../../assets/images/user.jpeg')} className="w-10 h-10 rounded-full" />
+          <Image source={require('../../assets/images/user.jpg')} className="w-10 h-10 rounded-full" />
           <View className='flex-col ml-2 flex-1'>
             <Text className='font-bold'>You</Text>
             <View className='bg-gray-300 rounded-lg p-3 mt-2'>
@@ -38,7 +38,7 @@ export default function Component() {
         </View>
 
         <View className='flex-row my-2 mb-4'>
-          <Image source={require('../../assets/images/user.jpeg')} className="w-10 h-10 rounded-full" />
+          <Image source={require('../../assets/images/user.jpg')} className="w-10 h-10 rounded-full" />
           <View className='flex-col ml-2 flex-1'>
             <Text className='font-bold'>You</Text>
             <View className='bg-gray-300 rounded-lg p-3 mt-2 mr-5'>
