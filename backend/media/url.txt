@@ -1,0 +1,5 @@
+Testing URLs
+
+OCR Scanner: http://127.0.0.1:8000/ocr/upload/ , key = file 
+Sinhala to English : http://127.0.0.1:8000/translate/si_to_en/?text=දියවැඩියාවට පෙර ඇතිවන රෝග ලක්ෂණ මොනවාද?
+English to Sinhala : http://127.0.0.1:8000/translate/en_to_si/?text=what are the signs of pre diabetes?
