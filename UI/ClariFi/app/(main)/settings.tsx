@@ -176,7 +176,7 @@ export default function Component() {
             <FontAwesome className="ml-3" name="sign-out" size={32} color="#dd3300" /> 
             <View className="flex-1 flex-col items-right ml-3">
               <Text className="text-xl font-bold text-black px-4">Sign Out</Text>
-              <Text className="text-gray-500 px-4">Logout, Delete Account</Text>
+              <Text className="text-gray-500 px-4">Log out Account</Text>
             </View>
             <FontAwesome className="mr-3" name="chevron-right" size={24} color="#0f525a" onPress={() => navigation.navigate('(login)')} />
           </View>

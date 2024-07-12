@@ -74,7 +74,7 @@ const Confirmation = () => {
           </View>
           {/* decline if not agree */}
           {isChecked ? (
-          <TouchableOpacity onPress={() => navigation.navigate('(main)')} className="bg-theme-green p-2 mb-5 mx-20 rounded-full justify-center items-center"> 
+          <TouchableOpacity onPress={() => navigation.navigate('(results)')} className="bg-theme-green p-2 mb-5 mx-20 rounded-full justify-center items-center"> 
             <Text className="text-white text-lg font-bold">Confirm</Text>
           </TouchableOpacity>
           ) : 

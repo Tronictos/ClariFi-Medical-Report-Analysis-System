@@ -2,11 +2,11 @@ import { Tabs } from 'expo-router';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { FontAwesome } from '@expo/vector-icons'; // Make sure to install the appropriate package
 import { BlurView } from 'expo-blur';
-
+import { AuthProvider } from '../../AuthContext';
 
 export default function TabLayout() {
   return (
-    
+    <AuthProvider>
     <Tabs
       screenOptions={{
         headerShown: false,
@@ -39,5 +39,6 @@ export default function TabLayout() {
             <TabBarIcon name={focused ? 'settings' : 'settings-outline'} color="#0f525a" />),
         }}/>
     </Tabs>
+  </AuthProvider>
   );
 }
