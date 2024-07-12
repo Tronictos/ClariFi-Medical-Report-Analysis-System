@@ -118,7 +118,7 @@ export default function SignInScreen() {
           </TouchableOpacity>
           <Text className="text-gray-500 text-center">or</Text>
           <TouchableOpacity onPress={() => navigation.navigate('(confirmation)')} className="bg-theme-green p-2 mt-3 mb-3 mx-20 h-20 rounded-full justify-center items-center"> 
-            {FontAwesome ? <FontAwesome name="file" size={40} color="#FFF" /> : 'Upload'}
+            {FontAwesome ? <FontAwesome name="book" size={40} color="#FFF" /> : 'Upload'}
           </TouchableOpacity>
           <Text className="text-gray-500 text-center">or</Text>
           <TouchableOpacity onPress={() => handleChoosePhoto('photo')} className="bg-theme-green p-2 mt-3 mb-3 mx-20 h-20 rounded-full justify-center items-center"> 

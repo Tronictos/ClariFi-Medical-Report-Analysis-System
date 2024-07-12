@@ -5,15 +5,13 @@ import { useLayoutEffect } from 'react';
 import { FontAwesome } from '@expo/vector-icons'; // For Facebook and Chrome icons
 import { auth } from '../../firebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { AuthContext } from '../../AuthContext';
-import { useContext } from 'react';
-
+import { useAuth } from '../../AuthContext';
 
 const SignInScreen = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const {  signedIn, setSignedIn } = useContext(AuthContext); // Access the context
+  const { setUser,  user } = useAuth(); // Access the context
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -21,13 +19,19 @@ const SignInScreen = () => {
     });
   }, [navigation]);
 
+  const loginStateSandle = () => {
+    setUser("Kevin");
+    // alert(user);
+  }
+
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        setSignedIn(true); // Update the signed-in state
+        // toggleAuth; // Update the signed-in state
         const user = userCredential.user;
         navigation.navigate('(main)');
+        loginStateSandle();
       })
       .catch((error) => {
         const errorCode = error.code;

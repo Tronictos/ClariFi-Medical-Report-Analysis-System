@@ -1,0 +1,9 @@
+glob2
+matplotlib
+numpy
+argparse
+scikit-image
+# pprint
+torch
+torchvision
+torchxrayvision

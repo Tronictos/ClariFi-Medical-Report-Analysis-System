@@ -3,11 +3,14 @@ import { View, Text, ScrollView, TouchableOpacity, Image, StatusBar, Animated , 
 import { useNavigation } from '@react-navigation/native';
 import { useLayoutEffect } from 'react';
 import { FontAwesome } from '@expo/vector-icons'; // Make sure to install the appropriate package
+import { useAuth } from '../../AuthContext';
+
 
 export default function Component() {
   const navigation = useNavigation();
 
   const [search, setSearch] = useState(false);
+  const { signedIn, toggleAuth } = useAuth(); // Access the context
 
   const [FBC_flask, setFBC_flask] = useState(false);
   const [MRI_flask, setMRI_flask] = useState(false);
@@ -87,7 +90,9 @@ export default function Component() {
             <View className='mx-2'>
               <View className="bg-white rounded-lg p-4 mt-1 shadow-md">
                 <View className="absolute w-1 h-16 right-0 bg-theme-green items-center"></View>
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('(upload_scan)' , { report: 'Chest X-ray' ,})}
+                >
                   <Text className="text-lg font-bold mb-2">Chest X-ray</Text>
                   <FontAwesome name="camera" size={24} color="#0f525a" style={{ position: 'absolute', right: 10, top: 6}} />
                 </TouchableOpacity>

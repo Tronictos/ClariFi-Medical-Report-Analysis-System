@@ -6,14 +6,13 @@ import { FontAwesome } from '@expo/vector-icons'; // Make sure to install the ap
 import { Animated } from 'react-native';
 import { useEffect } from 'react';
 import { useRef } from 'react';
-import { AuthContext } from '../../AuthContext';
-import { useContext } from 'react';
+import { useAuth } from '../../AuthContext';
 
 
 export default function Component() {
   const navigation = useNavigation();
   const [search, setSearch] = useState((false));
-  const { signedIn, setSignedIn } = useContext(AuthContext);
+  const {user, setUser} = useAuth();
 
   const [FBC_list, setFBC_list] = useState((false));
   const [SERUM_list, setSERUM_list] = useState((false));
@@ -23,11 +22,6 @@ export default function Component() {
   const [ENDOSCOPIC_list, setENDOSCOPIC_list] = useState((false));
   const spinValue = useRef(new Animated.Value(0)).current;
   const [spin, setSpin] = useState(-150);
-
-  const handleLogout = () => {
-    setSignedIn(false); // Update the signed-in state
-    navigation.navigate('SignIn'); // Navigate to the sign-in screen
-  };
 
   useEffect(() => {
       setSpin(spinValue.interpolate({
@@ -43,7 +37,6 @@ export default function Component() {
       })
     ).start();
   }, [spinValue]);
-
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -70,8 +63,9 @@ export default function Component() {
       >
         <FontAwesome name="search" size={24} color="#ffffff"/>
       </TouchableOpacity>
-      <Text className=' absolute pl-4 pb-8 bottom-0 left-0 text-3xl font-bold text-white'>Medical Reports {signedIn ? 'Signed In' : 'Signed Out'}</Text>
-      <Text className=' absolute pl-4 pb-4 bottom-0 left-0 text-sms font-regular text-white opacity-50'>choose a medical report type to continue</Text>
+      <Text className=' absolute pl-4 pb-8 bottom-0 left-0 text-3xl font-bold text-white'>Medical Reports</Text>
+      <Text 
+      className=' absolute pl-4 pb-4 bottom-0 left-0 text-sms font-regular text-white opacity-50'>choose a medical report type to continue</Text>
     </View>
 
     {search && (
