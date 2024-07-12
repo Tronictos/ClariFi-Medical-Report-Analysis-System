@@ -84,8 +84,8 @@ export default function Component() {
               <TouchableOpacity 
               onPress={() => setFBC_list(!FBC_list)}
               >
-              <Text className="text-lg font-bold mb-2">FWC - blood cell Reports</Text>
-              <Text className="text-gray-700">FBC report</Text>
+              <Text className="text-lg font-bold mb-2">Blood cell Reports</Text>
+              <Text className="text-gray-700">Blood related reports</Text>
               <FontAwesome name="list" size={24} color="#0f525a" style={{ position: 'absolute', right: 20, top: 14}} />
               </TouchableOpacity>
             </View>
@@ -96,7 +96,7 @@ export default function Component() {
                   <TouchableOpacity 
                   onPress={() => navigation.navigate('(upload)', { report: 'WBC report' ,})}
                   >
-                  <Text className="text-lg font-bold mb-2">WBC</Text>
+                  <Text className="text-lg font-bold mb-2">FBC</Text>
                   <FontAwesome name="paper-plane" size={24} color="#0f525a" style={{ position: 'absolute', right: 10, top: 6}} />
                   </TouchableOpacity>
                 </View>
@@ -351,7 +351,7 @@ export default function Component() {
               <TouchableOpacity
                onPress={() => setABG_list(!ABG_list)}
               >
-              <Text className="text-lg font-bold mb-2">ABG Test - Arterial blood gas Reports</Text>
+              <Text className="text-lg font-bold mb-2">ABG Tests</Text>
               <Text className="text-gray-700">LFT report</Text>
               <FontAwesome name="list" size={24} color="#0f525a" style={{ position: 'absolute', right: 20, top: 14}} />
               </TouchableOpacity>
@@ -533,6 +533,35 @@ export default function Component() {
                 </View>
               </View>
             )}
+             <View className="bg-white rounded-lg p-4 mt-4 shadow-md">
+              <TouchableOpacity
+               onPress={() => setABG_list(!ABG_list)}
+              >
+              <Text className="text-lg font-bold mb-2">Microbiology Tests</Text>
+              <Text className="text-gray-700">Microbiology related reports</Text>
+              <FontAwesome name="list" size={24} color="#0f525a" style={{ position: 'absolute', right: 20, top: 14}} />
+              </TouchableOpacity>
+            </View>
+
+            <View className="bg-white rounded-lg p-4 mt-4 shadow-md">
+              <TouchableOpacity
+               onPress={() => setABG_list(!ABG_list)}
+              >
+              <Text className="text-lg font-bold mb-2">Genetic and molecular Tests</Text>
+              <Text className="text-gray-700">Genetic and molecular related reports</Text>
+              <FontAwesome name="list" size={24} color="#0f525a" style={{ position: 'absolute', right: 20, top: 14}} />
+              </TouchableOpacity>
+            </View>
+
+            <View className="bg-white rounded-lg p-4 mt-4 shadow-md">
+              <TouchableOpacity
+               onPress={() => setABG_list(!ABG_list)}
+              >
+              <Text className="text-lg font-bold mb-2">Hormone Tests</Text>
+              <Text className="text-gray-700">hormone related reports</Text>
+              <FontAwesome name="list" size={24} color="#0f525a" style={{ position: 'absolute', right: 20, top: 14}} />
+              </TouchableOpacity>
+            </View>
           </ScrollView>
     </View>
     </>

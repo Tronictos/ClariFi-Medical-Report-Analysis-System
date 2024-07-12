@@ -76,7 +76,7 @@ export default function SignInScreen() {
       return;
     }
 
-    fetch(`${SERVER_URL}/ocr/upload/`, {
+    fetch(`${SERVER_URL}/ocr/scan/`, {
       method: 'POST',
       body: createFormData(photo, { userId: '123' }),
     })
@@ -89,7 +89,7 @@ export default function SignInScreen() {
         // console.error('Upload error:', error);
       });
       // #navigate to completion
-      navigation.navigate('(confirmation)');
+      navigation.navigate('(results_scan)');
   };
 
   const formatJson = (json) => {

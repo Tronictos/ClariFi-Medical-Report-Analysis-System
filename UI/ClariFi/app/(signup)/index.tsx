@@ -69,7 +69,7 @@ const SignUpScreen = () => {
       });
 
       handleRegisterUser();
-      navigation.navigate('(login)'); // Adjust the navigation as needed
+      navigation.navigate('(sign_up_data)'); // Adjust the navigation as needed
     } catch (error) {
       Alert.alert('Error', error.message);
     }

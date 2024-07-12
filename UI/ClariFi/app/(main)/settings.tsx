@@ -105,7 +105,7 @@ export default function Component() {
             )}
           </TouchableOpacity>
           <View className='flex-1 flex-col items-center mt-5'>
-            <Text className='text-xl font-extrabold'>S. Samarasignhe</Text>
+            <Text className='text-xl font-extrabold'>B.N. Basnayake</Text>
             <Text className='text-gray-500'>
               <TouchableOpacity onPress={() => handleChoosePhoto('photo')} className='pt-2'>
                 <Text className='text-theme-green'>Edit Profile</Text>  
